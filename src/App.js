@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import Computer from 'bitcoin-computer'
-import logo from './logo.svg'
 import './App.css'
 
 function App() {
@@ -12,9 +11,13 @@ function App() {
   const [amount, setAmount] = useState(0)
   const [to, setTo] = useState('')
 
-  useEffect(async () => {
-    setBalance(await computer.db.wallet.getBalance())
-  }, [computer.db.wallet])
+  useEffect(() => {
+   async function refresh() {
+      if(computer)
+        setBalance(await computer.db.wallet.getBalance())
+    }
+    refresh()
+  }, [computer])
 
   const handleSubmit = async (evt) => {
     evt.preventDefault()
