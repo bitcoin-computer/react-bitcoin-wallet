@@ -1,6 +1,6 @@
-# A Bitcoin Wallet in React
+# A Crypto Wallet in React
 
-A simple Bitcoin Wallet built using [Create React App](https://create-react-app.dev/). You can to make a deposit into the wallet by sending Bitcoin to the address shown. The wallet displays your balance and allows you to send Bitcoins to a friend. Build using [Bitcoin|Computer](https://bitcoin-computer.gitbook.io/docs/).
+A simple Crypto Wallet built using [Create React App](https://create-react-app.dev/). We are currently supporting LTC, and will add support to other currencies soon. You can make a deposit into the wallet by sending Litecoins to the address shown, using [this LTC faucet](https://testnet-faucet.com/ltc-testnet/). The wallet displays your balance and allows you to send Litecoins to a friend. Build using [Bitcoin Computer](https://bitcoin-computer.gitbook.io/docs/).
 
 <img src="https://i.ibb.co/pbMjShG/Screen-Shot-2019-10-17-at-17-01-12.png" alt="drawing" width="400"/>
 
