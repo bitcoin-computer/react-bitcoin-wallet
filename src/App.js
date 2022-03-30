@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import Computer from 'bitcoin-computer'
+import { Computer } from 'bitcoin-computer-lib'
 import './App.css'
 
 function App() {
   const [computer] = useState(new Computer({
-    seed: 'describe install ostrich blast region era course junior feed acoustic galaxy annual',
-    chain: 'BSV'
+    seed: 'travel upgrade inside soda birth essence junk merit never twenty system opinion',
+    chain: 'LTC'
   }))
   const [balance, setBalance] = useState(0)
   const [amount, setAmount] = useState(0)
@@ -36,17 +36,31 @@ function App() {
 
       <h3>Send</h3>
       <form onSubmit={handleSubmit}>
-        <label>
-          Amount&nbsp;
-          <input type="number" value={amount} onChange={e => setAmount(e.target.value)}>
-          </input>
-        </label><br />
-        <label>
-          To&nbsp;
-          <input type="string" value={to} onChange={e => setTo(e.target.value)}>
-          </input>
-        </label><br />
-        <input type="submit" value="Send Bitcoin"></input>
+        <div className='row'>
+          <div className='col-25'>
+            <label>
+              Amount&nbsp;
+            </label><br />
+          </div>
+          <div class="col-75">
+            <input type="number" value={amount} min="0.00" step="0.001" presicion={2} onChange={e => setAmount(e.target.value)}>
+            </input>   
+          </div>
+        </div>
+        <div className='row'>
+          <div className='col-25'>
+            <label>
+              To&nbsp;
+            </label><br />
+          </div>
+          <div class="col-75">
+            <input type="string" style={{ width: "300px" }} value={to} onChange={e => setTo(e.target.value)}>
+            </input>
+          </div>  
+        </div>
+        <div className='row'>
+          <input type="submit" value="Send Bitcoin"></input>
+        </div>
       </form>
     </div>
   )
